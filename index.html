@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Radhe Dana Chana - Discount</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #ffffff, #f3f3f3);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      padding: 40px 30px;
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #b71c1c;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .discount-label {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .discount {
+      font-size: 72px;
+      font-weight: 800;
+      color: #2e7d32;
+      margin: 10px 0;
+    }
+
+    .percent {
+      font-size: 50px;
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="title">Radhe Dana Chana</div>
+    <div class="subtitle">🙏 Thank you for visiting 🙏</div>
+
+    <div class="discount-label">Your Discount</div>
+    <div class="discount" id="discountValue">0</div>
+    <div class="percent">₹</div>
+
+    <div class="footer">
+      🎉 Special offer just for you 🎉
+    </div>
+  </div>
+
+  <script>
+    function getRandomDiscount() {
+      // 70% chance of 0
+    if (Math.random() < 0.5) {
+      return 0;
+    }
+
+    // Now we are in the remaining 40%
+    // From this, 20 should come only 2/10 times
+    if (Math.random() < 0.2) {
+      return 20;
+    }
+
+    // Remaining 8/10 times → 5 or 10
+    const values = [5, 10];
+    return values[Math.floor(Math.random() * values.length)];
+    }
+
+    document.getElementById('discountValue').innerText = getRandomDiscount();
+  </script>
+
+</body>
+</html>
